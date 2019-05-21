@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'bookings/new'
+  get 'bookings/create'
   root to: 'pages#home'
   devise_for :users
 # AS RENTER
