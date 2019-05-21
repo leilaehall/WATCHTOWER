@@ -1,0 +1,34 @@
+
+<a class="navbar-brand">
+  <h1>WatchTower <i class="fas fa-stopwatch"></i> <i class="fas fa-gopuram"></i></h1>
+</a>
+
+<div class="split-new">
+  <div class="form-wrapper">
+    <%= simple_form_for @watch, url: my_watches_url do |f| %>
+    <div class="centered">
+      <h3> Upload your watch </h3>
+      <div>
+        <div class="form-row">
+        <%= f.input :watch_brand, wrapper_html: {class: "col-md-3"} %>
+        <%= f.input :watch_model, wrapper_html: {class: "col-md-3"} %>
+        </div>
+        <div class="form-row">
+        <%= f.input :watch_category, wrapper_html: {class: "col-md-3"} %>
+        <%= f.input :gender, as: :select, collection: ["Female", "Male", "Coder"], wrapper_html: {class: "col-md-3"} %>
+        </div>
+        <div class="form-row">
+        <%= f.input :rental_price, wrapper_html: {class: "col-md-3"} %>
+        <%= f.input :retail_price, wrapper_html: {class: "col-md-3"} %>
+        </div>
+        <div class="form-row">
+        <%= f.input :availability_start, as: :string, input_html: {class: "datepicker"}, wrapper_html: {class: "col-md-3"} %>
+        <%= f.input :availability_end, as: :string, input_html: {class: "datepicker"}, wrapper_html: {class: "col-md-3"} %>
+        </div>
+        <%= f.button :submit, "Create", class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+

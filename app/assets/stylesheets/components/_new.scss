@@ -1,0 +1,18 @@
+.split-new {
+  display: flex;
+  justify-content: center;
+  width: 70%;
+  padding-top: 25px;
+}
+.split-new .form-wrapper {
+  border-radius: 10px;
+  border: 5px solid $blue;
+  width: 900px;
+  height: 530px;
+  padding: 2em;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.split-new h3 {
+  color: #E8F5FA;
+}
