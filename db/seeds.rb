@@ -66,7 +66,7 @@ watches_attributes = [
     watch_image:        File.open(Rails.root.join("db/fixtures/watches/rolex-gmt-master.png"))
   },
  {
-    watch_brand:        'Patek Philippe',
+    watch_brand:        'Patek P',
     watch_model:        'Calatrava',
     watch_category:     'Quartz',
     rental_price:       '180',
@@ -150,7 +150,7 @@ watches_attributes = [
     watch_image:         File.open(Rails.root.join("db/fixtures/watches/zenith-elite.png"))
   },
   {
-    watch_brand:         'Vacheron Constantin',
+    watch_brand:         'VC',
     watch_model:         'Malte',
     watch_category:      'Slim',
     rental_price:        '300',
@@ -210,7 +210,7 @@ watches_attributes = [
     watch_image:         File.open(Rails.root.join("db/fixtures/watches/breguet-moon.jpg"))
   },
   {
-    watch_brand:         'Audemars Piguet',
+    watch_brand:         'Audemars P',
     watch_model:         'Royal Oak Concept',
     watch_category:      'Quartz',
     rental_price:        '400',
