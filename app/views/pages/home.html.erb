@@ -1,6 +1,6 @@
 <div class="navbar navbar-home navbar-expand-sm navbar-light navbar-lewagon">
   <a class="navbar-brand" href="#">
-    <%= image_tag "logo", alt: "logo" %>
+    <h1>WatchTower <i class="fas fa-stopwatch"></i> <i class="fas fa-gopuram"></i></h1>
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -9,23 +9,26 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item ">
-        <a class="navlink" href="#">Home</a>
+        <%= link_to "Home", root_path, class: "navlink"  %>
       </li>
       <li class="nav-time ">
-        <a class="navlink" href="#">Rent Watches</a>
+        <%= link_to "Rent Watches", new_my_watch_path, class: "navlink" %>
       </li>
       <li class="nav-time ">
-        <a class="navlink" href="#">Lease Watches</a>
+        <%= link_to "Lease Watches", watches_path, class: "navlink" %>
       </li>
     </div>
   </li>
 </ul>
 <div class="nav-item active">
-  <a class="navlink" href="#">Log in</a>
+  <%= link_to "Log in", new_user_session_path, class: "navlink"  %>
 </div>
-<nav class="navbar navbar-light bg-light">
+<div class="nav-item active">
+  <%= link_to "Sign up", new_user_registration_path, class: "navlink"  %>
+</div>
+<nav class="navbar">
   <form class="form-inline">
-    <input class="form-control mr-sm-2" type="search" placeholder="Search..." aria-label="Search">
+    <input class="form-control mr-sm-2" type="search" placeholder="e.g., Rolex GMT" aria-label="Search">
     <button class="btn btn-primary" type="submit">Search</button>
   </form>
 </nav>
@@ -36,47 +39,45 @@
 <div class="banner banner-homepage" style="background-image: url(https://images.pexels.com/photos/129843/pexels-photo-129843.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);">
   <div class="split">
     <div class="form-wrapper">
-      <form>
-        <div class="centered">
-          <h3> CHECK AVAILABILITY </h3>
-          <div>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="inputCity">City</label>
-                <input type="text" class="form-control" id="inputCity">
-              </div>
-              <div class="form-group">
-                <label for="inputGender">Gender</label>
-                <select id="inputState" class="form-control">
-                  <option selected>Choose...</option>
-                  <option>Female</option>
-                  <option>Male</option>
-                  <option>Coder</option>
-                </select>
-              </div>
-              <%= simple_form_for :search, method: "get" do |f| %>
-              <%= f.input :Rent_From, as: :string, required: false, input_html: {class: "datepicker"} %>
-              <%= f.input :Until, as: :string, required: false, input_html: {class: "datepicker"} %>
-              <%= f.button :submit, "Explore", class: "btn btn-primary" %>
-              <% end %>
+      <%= simple_form_for :search, url: watches_path, method: :get do |f| %>
+      <div class="centered">
+        <h3> CHECK AVAILABILITY </h3>
+        <div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="inputCity">City</label>
+              <input type="text" name="search[city]" class="form-control" id="inputCity">
             </div>
+            <div class="form-group">
+              <label for="inputGender">Gender</label>
+              <select name="search[gender]" id="inputState" class="form-control">
+                <option selected>Choose...</option>
+                <option>Female</option>
+                <option>Male</option>
+                <option>Coder</option>
+              </select>
+            </div>
+            <%= f.input :from, as: :string, required: false, label: "Rent from", input_html: {class: "datepicker"} %>
+            <%= f.input :until, as: :string, required: false, label: "Rent to", input_html: {class: "datepicker"} %>
+            <%= f.button :submit, "Explore", class: "btn btn-primary" %>
           </div>
         </div>
-      </form>
+      </div>
+      <% end %>
     </div>
   </div>
 
   <div class="split container-slogan" style="height:400px;">
     <div class="centered">
-      <h1><strong>SLOGAN!!!!!</strong></h1>
-      <p>Change your life and lease a watch anywhere around the world.</p>
+      <h1><strong>Not On My Watch.</strong></h1>
+      <p>Finally wear the watch you have always wanted. </p>
     </div>
   </div>
 </div>
 
 
 <div>
-<div class="midpage">
+  <div class="midpage">
     <h2 class="text-center">How it works</h2>
     <div class="cards">
       <div class="card">
