@@ -16,5 +16,4 @@ Rails.application.routes.draw do
   end
 # AS OWNER
   resources :my_watches, only: [:index, :create, :new]
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
