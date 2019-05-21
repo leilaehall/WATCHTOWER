@@ -15,10 +15,6 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 
-#Gem for time form
-gem 'momentjs-rails', '>= 2.9.0'
-gem 'bootstrap3-datetimepicker-rails', '~> 4.14.30'
-
 group :development do
   gem 'web-console', '>= 3.3.0'
 end

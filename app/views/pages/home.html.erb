@@ -1,6 +1,6 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-home navbar-expand-sm navbar-light navbar-lewagon">
   <a class="navbar-brand" href="#">
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" />
+    <%= image_tag "logo", alt: "logo" %>
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -8,20 +8,20 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home</a>
+      <li class="nav-item ">
+        <a class="navlink" href="#">Home</a>
       </li>
-      <li class="nav-time active">
-        <a class="nav-link" href="#">Rent Watches</a>
+      <li class="nav-time ">
+        <a class="navlink" href="#">Rent Watches</a>
       </li>
-      <li class="nav-time active">
-        <a class="nav-link" href="#">Lease Watches</a>
+      <li class="nav-time ">
+        <a class="navlink" href="#">Lease Watches</a>
       </li>
     </div>
   </li>
 </ul>
 <div class="nav-item active">
-  <a class="nav-link" href="#">Log in</a>
+  <a class="navlink" href="#">Log in</a>
 </div>
 <nav class="navbar navbar-light bg-light">
   <form class="form-inline">
@@ -33,58 +33,79 @@
 </div>
 </div>
 
-<div class="banner" style="background-image: url(https://images.pexels.com/photos/129843/pexels-photo-129843.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);">
-  <div class="container">
-    <h1><strong>SLOGAN!!!!!</strong></h1>
-    <p>Change your life and lease a watch anywhere around the world.</p>
-    <a class="btn btn-primary" href="#">Browse Watches</a>
+<div class="banner banner-homepage" style="background-image: url(https://images.pexels.com/photos/129843/pexels-photo-129843.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);">
+  <div class="split">
+    <div class="form-wrapper">
+      <form>
+        <div class="centered">
+          <h3> CHECK AVAILABILITY </h3>
+          <div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="inputCity">City</label>
+                <input type="text" class="form-control" id="inputCity">
+              </div>
+              <div class="form-group">
+                <label for="inputGender">Gender</label>
+                <select id="inputState" class="form-control">
+                  <option selected>Choose...</option>
+                  <option>Female</option>
+                  <option>Male</option>
+                  <option>Coder</option>
+                </select>
+              </div>
+              <%= simple_form_for :search, method: "get" do |f| %>
+              <%= f.input :Rent_From, as: :string, required: false, input_html: {class: "datepicker"} %>
+              <%= f.input :Until, as: :string, required: false, input_html: {class: "datepicker"} %>
+              <%= f.button :submit, "Explore", class: "btn btn-primary" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="split container-slogan" style="height:400px;">
+    <div class="centered">
+      <h1><strong>SLOGAN!!!!!</strong></h1>
+      <p>Change your life and lease a watch anywhere around the world.</p>
+    </div>
   </div>
 </div>
 
-<div>
-  <form>
-    <div class="form-row">
-      <div class="form-group col-md-6">
-        <label for="inputCity">City</label>
-        <input type="text" class="form-control" id="inputCity">
-      </div>
-      <div class="form-group col-md-6">
-        <label for="inputState">State</label>
-        <select id="inputState" class="form-control">
-          <option selected>Choose...</option>
-          <option>...</option>
-        </select>
-      </div>
-    </div>
-<!--     <div class="form-group col-md-6">
-      <div class='input-group date' id='datetimepicker1'>
-        <input type='text' class="form-control" />
-        <span class="input-group-addon">
-          <span class="glyphicon glyphicon-calendar"></span>
-        </span>
-      </div>
-    </div>
-    <script type="text/javascript">
-      $(function () {
-        $('#datetimepicker1').datetimepicker();
-      });
-    </script>
-  </div> -->
 
-<button type="submit" class="btn btn-primary">Search</button>
-</form>
+<div>
+<div class="midpage">
+    <h2 class="text-center">How it works</h2>
+    <div class="cards">
+      <div class="card">
+        <%= image_tag("search.jpg", :alt => "search") %>
+        <h4>Browse</h4>
+        <p>Browse watches!!!</p>
+      </div>
+      <div class="card">
+        <%= image_tag("subscribe.jpg", :alt => "subscribe") %>
+        <h4>Subscribe</h4>
+        <p>Become a member</p>
+      </div>
+      <div class="card">
+        <%= image_tag("rent.jpg", :alt => "rent") %>
+        <h4>Rent a watch</h4>
+        <p>Yeah just that</p>
+      </div>
+    </div>
+  </div>
 </div>
 
 
 <div class="footer">
   <div class="footer-links">
-    <a href="#"><i class="fab fa-github"></i></a>
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-facebook"></i></a>
-    <a href="#"><i class="fab fa-twitter"></i></a>
-    <a href="#"><i class="fab fa-linkedin"></i></a>
+    <p>Rent watches / </p>
+    <p> Lend watches / </p>
+    <p> Rent watches / </p>
   </div>
   <div class="footer-copyright">
-    This footer is made with <i class="fas fa-heart"></i> at Le Wagon
+    <i class="fas fa-stopwatch"></i> WATCHTOWER INC. <i class="fas fa-stopwatch"></i>
   </div>
 </div>

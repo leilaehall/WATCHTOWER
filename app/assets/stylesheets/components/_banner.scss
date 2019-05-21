@@ -1,12 +1,14 @@
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 150px 0;
+  padding: 200px 0;
+  height: 600px;
+  color: white;
 }
 
 .banner h1 {
   margin: 0;
-  color: white;
+  color: $white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 32px;
   font-weight: bold;
@@ -17,4 +19,28 @@
   color: white;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.banner-homepage {
+  display: flex;
+  height: auto;
+  padding: 100px 0;
+}
+
+.split {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  padding-top: 80px;
+}
+.split .form-wrapper {
+  border-radius: 10px;
+  border: 5px solid $blue;
+  width: 300px;
+  padding: 2em;
+  background-color: rgba(0,0,0,0.4);
+}
+
+body {
+  background-color: $blue;
 }
