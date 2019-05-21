@@ -1,0 +1,62 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <a class="navbar-brand" href="#">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" />
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home</a>
+      </li>
+      <li class="nav-time active">
+        <a class="nav-link" href="#">Rent Watches</a>
+      </li>
+      <li class="nav-time active">
+        <a class="nav-link" href="#">Lease Watches</a>
+      </li>
+    </div>
+  </li>
+</ul>
+<div class="nav-item active">
+  <a class="nav-link" href="#">Log in</a>
+</div>
+<nav class="navbar navbar-light bg-light">
+  <form class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search..." aria-label="Search">
+    <button class="btn btn-primary" type="submit">Search</button>
+  </form>
+</nav>
+</div>
+</div>
+</div>
+
+<h1>All watches</h1>
+<div class="cards">
+  <% @watches.each do |watch| %>
+    <div class="card-product">
+      <%= cl_image_tag watch.watch_image, width: 200, crop: :fill %>
+      <div class="card-product-infos">
+        <h2><%= link_to watch.watch_brand, watch_path(watch)%></h2>
+        <p><%= watch.watch_model %></p>
+        <p><%= watch.watch_category %></p>
+        <p><%= watch.rental_price %> € per day</p>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright">
+    This footer is made with <i class="fas fa-heart"></i> at Le Wagon
+  </div>
+</div>

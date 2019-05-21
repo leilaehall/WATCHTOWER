@@ -9,24 +9,31 @@ users_attributes = [
     email:      'barack@example.com',
     password:   '123456',
     address:    'Street 1, Washington',
+    avatar:     File.open(Rails.root.join("db/fixtures/user_image/barack-obama.png"))
   },
   {
     username:   'George Bush',
     email:      'george@example.com',
     password:   '123456',
     address:    'Street 2, Dallas',
+    avatar:     File.open(Rails.root.join("db/fixtures/user_image/george-bush.png"))
+
   },
   {
     username:   'Bill Clinton',
     email:      'bill@example.com',
     password:   '123456',
     address:    'Street 4, NYC',
+    avatar:     File.open(Rails.root.join("db/fixtures/user_image/bill-clinton.png"))
+
   },
   {
     username:   'Margaret Tatcher',
     email:      'maggie@example.com',
     password:   '123456',
     address:    'Pont street, London',
+    avatar:     File.open(Rails.root.join("db/fixtures/user_image/margaret-thatcher.png"))
+
   },
 ]
 
