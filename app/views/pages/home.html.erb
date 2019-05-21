@@ -1,3 +1,112 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<%= link_to "log out", destroy_user_session_path, method: :delete %>
+<div class="navbar navbar-home navbar-expand-sm navbar-light navbar-lewagon">
+  <a class="navbar-brand" href="#">
+    <h1>WatchTower <i class="fas fa-stopwatch"></i> <i class="fas fa-gopuram"></i></h1>
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item ">
+        <%= link_to "Home", root_path, class: "navlink"  %>
+      </li>
+      <li class="nav-time ">
+        <%= link_to "Rent Watches", new_my_watch_path, class: "navlink" %>
+      </li>
+      <li class="nav-time ">
+        <%= link_to "Lease Watches", watches_path, class: "navlink" %>
+      </li>
+    </div>
+  </li>
+</ul>
+<div class="nav-item active">
+  <%= link_to "Log in", new_user_session_path, class: "navlink"  %>
+</div>
+<div class="nav-item active">
+  <%= link_to "Sign up", new_user_registration_path, class: "navlink"  %>
+</div>
+<nav class="navbar">
+  <form class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="e.g., Rolex GMT" aria-label="Search">
+    <button class="btn btn-primary" type="submit">Search</button>
+  </form>
+</nav>
+</div>
+</div>
+</div>
+
+<div class="banner banner-homepage" style="background-image: url(https://images.pexels.com/photos/129843/pexels-photo-129843.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);">
+  <div class="split">
+    <div class="form-wrapper">
+      <%= simple_form_for :search, url: watches_path, method: :get do |f| %>
+      <div class="centered">
+        <h3> CHECK AVAILABILITY </h3>
+        <div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="inputCity">City</label>
+              <input type="text" name="search[city]" class="form-control" id="inputCity">
+            </div>
+            <div class="form-group">
+              <label for="inputGender">Gender</label>
+              <select name="search[gender]" id="inputState" class="form-control">
+                <option selected>Choose...</option>
+                <option>Female</option>
+                <option>Male</option>
+                <option>Coder</option>
+              </select>
+            </div>
+            <%= f.input :from, as: :string, required: false, label: "Rent from", input_html: {class: "datepicker"} %>
+            <%= f.input :until, as: :string, required: false, label: "Rent to", input_html: {class: "datepicker"} %>
+            <%= f.button :submit, "Explore", class: "btn btn-primary" %>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="split container-slogan" style="height:400px;">
+    <div class="centered">
+      <h1><strong>Not On My Watch.</strong></h1>
+      <p>Finally wear the watch you have always wanted. </p>
+    </div>
+  </div>
+</div>
+
+
+<div>
+  <div class="midpage">
+    <h2 class="text-center">How it works</h2>
+    <div class="cards">
+      <div class="card">
+        <%= image_tag("search.jpg", :alt => "search") %>
+        <h4>Browse</h4>
+        <p>Browse watches!!!</p>
+      </div>
+      <div class="card">
+        <%= image_tag("subscribe.jpg", :alt => "subscribe") %>
+        <h4>Subscribe</h4>
+        <p>Become a member</p>
+      </div>
+      <div class="card">
+        <%= image_tag("rent.jpg", :alt => "rent") %>
+        <h4>Rent a watch</h4>
+        <p>Yeah just that</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="footer">
+  <div class="footer-links">
+    <p>Rent watches / </p>
+    <p> Lend watches / </p>
+    <p> Rent watches / </p>
+  </div>
+  <div class="footer-copyright">
+    <i class="fas fa-stopwatch"></i> WATCHTOWER INC. <i class="fas fa-stopwatch"></i>
+  </div>
+</div>

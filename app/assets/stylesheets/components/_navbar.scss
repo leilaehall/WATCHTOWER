@@ -1,12 +1,36 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: transparent;
+  color: white;
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
+    color: white;
+
+}
+
+.navbar-brand h1 {
+color: #E8F5FA;
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 80px;
 }
+
+.navbar-home {
+  position: absolute;
+  left: 0;
+  right: 0;
+  color: white;
+}
+
+.nav-time {
+  color: white;
+}
+
+.navlink {
+  color: $white;
+  padding-left: 30px;
+}
+
