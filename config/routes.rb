@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # root to: 'watches#show'
   devise_for :users
 # AS RENTER
-  resources :watches, only: [:index, :show] do
+  resources :watches, only: [:index, :show, :destroy] do
     resources :bookings, only: [:new, :create]
   end
 # AS BOTH

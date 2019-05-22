@@ -3,6 +3,11 @@ class MyWatchesController < ApplicationController
     @watch = Watch.new
   end
 
+  def index
+    @watches = Watch.where(user: current_user)
+
+  end
+
   def create
     @watch = Watch.new(watch_params)
     @watch.user = current_user
