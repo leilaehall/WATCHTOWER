@@ -1,6 +1,6 @@
-<body class="banner" style="background-image: url(https://images.pexels.com/photos/129843/pexels-photo-129843.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260); margin-left: 200px; margin-right: 200px">
+<body class="banner" style="background-image: url(https://images.pexels.com/photos/129843/pexels-photo-129843.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)">
 
-  <div class="" style="color: white">
+  <div class="" style="color: white; margin-left: 200px; margin-right: 200px">
 
     <h2>Log in</h2>
 
@@ -17,9 +17,11 @@
     </div>
 
     <div class="form-actions" style="text-align: center">
-     <button class="btn btn-danger"><%= f.button :submit, "Log in" %></button>
+     <button class="btn btn-primary"><%= f.button :submit, "Log in" %></button>
     </div>
     <% end %>
-  </div>
   <%= render "devise/shared/links" %>
+  <br>
+  <br>
+  </div>
 </body>
