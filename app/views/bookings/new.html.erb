@@ -1,19 +1,18 @@
-<body class="banner" style="background-image: url(https://images.pexels.com/photos/129843/pexels-photo-129843.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260); margin-left: 200px; margin-right: 200px; margin-top: 10px; margin-bottom: 200px; padding-top: 10px">
-  <div class="" style="color: white">
+<div class="main-container">
+  <div class="form-inputs" style="color: white; margin-left: 200px; margin-right: 200px">
+    <br>
     <h2>Booking confirmation form: </h2>
-
-    <div class="form-inputs" style="color: white">
-      <p>You selected the <strong><%= @watch.watch_brand %> <%= @watch.watch_model %></strong> watch!</p>
-      <p>Price per day: <%= @watch.rental_price %> €</p>
-      <p>Please add the following information to finalize your booking: </p>
-      <%= simple_form_for [@booking] do |b| %>
-      <%= b.input :start_date %>
-      <%= b.input :end_date %>
-      <%= b.input :delivery_address %>
-      <%= b.submit "Finalize my booking", bookings_path, class: "btn btn-primary" %>
-      <% end %>
-    </div>
-
+    <h3>You selected the <strong><%= @watch.watch_brand %> <%= @watch.watch_model %></strong> watch!</h3>
+    <br>
+    <p>Price per day: <%= @watch.rental_price %> €</p>
+    <p>Please add the following information to finalize your booking: </p>
+    <%= simple_form_for [@booking] do |b| %>
+    <%= b.input :start_date %>
+    <%= b.input :end_date %>
+    <%= b.input :delivery_address %>
+    <%= b.submit "Finalize my booking", class: "btn btn-primary" %>
+    <% end %>
+    <br>
   </div>
-</body>
+</div>
 
