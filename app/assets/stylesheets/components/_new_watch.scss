@@ -1,14 +1,13 @@
 .split-new {
   display: flex;
   justify-content: center;
-  width: 70%;
-  padding-top: 25px;
+  padding-top: 30px;
+  padding-bottom: 80px;
+
 }
 .split-new .form-wrapper {
   border-radius: 10px;
   border: 5px solid $blue;
-  width: 900px;
-  height: 530px;
   padding: 2em;
   background-color: rgba(0,0,0,0.4);
 }
@@ -19,4 +18,8 @@
 
 .new-watch body {
   height: 100%;
+}
+
+.watch-form {
+  color: white;
 }
