@@ -20,6 +20,7 @@ class MyWatchesController < ApplicationController
     params.require(:watch).permit(
       :watch_brand,
       :watch_model,
+      :watch_image,
       :watch_category,
       :rental_price,
       :retail_price,

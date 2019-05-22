@@ -1,6 +1,6 @@
 <div class="main-container">
   <div class="split-new">
-    <div class="form-wrapper">
+    <div class="form-wrapper watch-form d-flex">
       <%= simple_form_for @watch, url: my_watches_url do |f| %>
         <div class="centered">
           <h3> Upload your watch </h3>
@@ -25,7 +25,7 @@
             </div>
           </div>
           <%= f.button :submit, "Create", class: "btn btn-primary" %>
-          <%= link_to "Cancel / back to homepage", root_path, class: "navlink"  %>
+          <%= link_to "Cancel ", root_path, class: "navlink"  %>
         </div>
       <% end %>
     </div>
