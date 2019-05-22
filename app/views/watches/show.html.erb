@@ -1,0 +1,56 @@
+<div class="navbar navbar-home navbar-expand-sm navbar-light navbar-lewagon">
+  <a class="navbar-brand" href="#">
+    <%= image_tag "logo", alt: "logo" %>
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item ">
+        <a class="navlink" href="#">Home</a>
+      </li>
+      <li class="nav-time ">
+        <a class="navlink" href="#">Rent Watches</a>
+      </li>
+      <li class="nav-time ">
+        <a class="navlink" href="#">Lease Watches</a>
+      </li>
+    </div>
+  </li>
+</ul>
+<div class="nav-item active">
+  <a class="navlink" href="#">Log in</a>
+</div>
+<nav class="navbar navbar-light bg-light">
+  <form class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search..." aria-label="Search">
+    <button class="btn btn-primary" type="submit">Search</button>
+  </form>
+</nav>
+</div>
+</div>
+</div>
+
+<div class="card-product">
+  <img src="<%= @watch.watch_image %>">
+  <div class="card-product-infos">
+    <h2> <%=@watch.watch_brand%> - <%=@watch.watch_model%> </h2>
+    <p>Model <strong><%=@watch.watch_category%></strong></p>
+    <p>Gender <strong><%=@watch.gender%></strong></p>
+    <h3>$<%=@watch.rental_price%> (per day)</h3> <p>Retail price $<%=@watch.retail_price%></p>
+    <button class="btn btn-primary btn-book" type="submit"><strong>BOOK NOW</strong></button>
+  </div>
+</div>
+
+<div class="footer">
+  <div class="footer-links">
+    <p>Rent watches / </p>
+    <p> Lend watches / </p>
+    <p> Rent watches / </p>
+  </div>
+  <div class="footer-copyright">
+    <i class="fas fa-stopwatch"></i> WATCHTOWER INC. <i class="fas fa-stopwatch"></i>
+  </div>
+</div>

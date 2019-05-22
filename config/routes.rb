@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
+  get 'bookings/new'
+  get 'bookings/create'
   root to: 'pages#home'
+  # root to: 'watches#show'
   devise_for :users
 # AS RENTER
   resources :watches, only: [:index, :show] do
@@ -15,5 +18,4 @@ Rails.application.routes.draw do
   end
 # AS OWNER
   resources :my_watches, only: [:index, :create, :new]
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
