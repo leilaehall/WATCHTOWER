@@ -8,7 +8,9 @@ class MyWatchesController < ApplicationController
     @watch.user = current_user
 
     if @watch.save
-      redirect_to my_watches_path
+      flash[:notice] = "Your watch has been successfully created"
+      # redirect_to my_watches_path
+      redirect_to watches_path
     else
       render :new
     end
