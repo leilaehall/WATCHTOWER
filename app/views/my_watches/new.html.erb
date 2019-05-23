@@ -8,6 +8,27 @@
             <div class="form-row">
               <%= f.input :watch_brand, wrapper_html: {class: "col-md-3"} %>
               <%= f.input :watch_model, wrapper_html: {class: "col-md-3"} %>
+              <label for="inputCity">City</label>
+              <div class="form-group">
+              <select> name="search[city]" id="inputCity" class="form-control">
+              <option selected>Select</option>
+              <option>Geneva</option>
+              <option>Lausanne</option>
+              <option>Zermatt</option>
+              <option>Basel</option>
+              <option>Zurich</option>
+              <option>Zug</option>
+              <option>Schwyz</option>
+              <option>Davos</option>
+              <option>St. Moritz</option>
+              <option>Lugano</option>
+              <option>Thun</option>
+              <option>Neuchâtel</option>
+              <option>Winterthur</option>
+              <option>St. Gallen</option>
+              <option>Yverdon-les-Bains</option>
+              </select>
+            </div>
             </div>
             <div class="form-row">
               <%= f.input :watch_category, wrapper_html: {class: "col-md-3"} %>
@@ -19,7 +40,6 @@
             </div>
             <div class="form-row">
               <%= f.input :availability_start, as: :string, input_html: {class: "datepicker"}, wrapper_html: {class: "col-md-3"} %>
-              <%= f.input :availability_end, as: :string, input_html: {class: "datepicker"}, wrapper_html: {class: "col-md-3"} %>
               <%= f.input :watch_image, wrapper_html: {class: "col-md-6"} , name: "klik"%>
               <%= f.input :watch_image_cache, as: :hidden %>
             </div>
