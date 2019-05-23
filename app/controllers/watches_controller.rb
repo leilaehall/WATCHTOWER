@@ -2,6 +2,7 @@ class WatchesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
+
     if params[:query].present?
 
       conditions = <<~SQL
@@ -15,8 +16,17 @@ class WatchesController < ApplicationController
 
     else
       @watches = Watch.all
-      end
     end
+
+    @watch_map = Watch.where.not(latitude: nil, longitude: nil)
+
+    @markers = @watch_map.map do |watch|
+      {
+        lat: watch.latitude,
+        lng: watch.longitude
+      }
+    end
+  end
 
 
   def show

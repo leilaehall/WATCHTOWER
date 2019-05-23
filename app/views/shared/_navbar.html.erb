@@ -20,9 +20,12 @@
     </ul>
   </div>
   <% if user_signed_in? %>
-  <div class="nav-item active">
-    <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "navlink"  %>
-  </div>
+    <div class="nav-item active">
+      <%= link_to "My Watches", my_watches_path, class: "navlink"  %>
+    </div>
+    <div class="nav-item active">
+      <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "navlink"  %>
+    </div>
   <% else %>
   <div class="nav-item active">
     <%= link_to "Log in", new_user_session_path, class: "navlink"  %>
@@ -31,7 +34,6 @@
     <%= link_to "Sign up", new_user_registration_path, class: "navlink"  %>
   </div>
   <% end %>
-
   <%= form_tag watches_path, method: :get do %>
   <%= text_field_tag :query,
   params[:query],
