@@ -5,25 +5,27 @@
     <div class="form-wrapper">
       <%= simple_form_for :search, url: watches_path, method: :get do |f| %>
       <div class="centered">
-        <h3> CHECK AVAILABILITY </h3>
+        <h3> Look for your new watch! </h3>
         <div>
           <div class="form-row">
-            <div class="form-group">
+            <div class="form-group alignment">
               <label for="inputCity">City</label>
-              <input type="text" name="search[city]" class="form-control" id="inputCity">
+              <input type="text" name="search[city]" class="form-control " id="inputCity">
             </div>
             <div class="form-group">
               <label for="inputGender">Gender</label>
               <select name="search[gender]" id="inputState" class="form-control">
-                <option selected>Choose...</option>
+                <option selected>Select</option>
                 <option>Female</option>
                 <option>Male</option>
-                <option>Coder</option>
+                <option>Other</option>
               </select>
             </div>
-            <%= f.input :from, as: :string, required: false, label: "Rent from", input_html: {class: "datepicker"} %>
-            <%= f.input :until, as: :string, required: false, label: "Rent to", input_html: {class: "datepicker"} %>
+            <div class="alignment">
+            <%= f.input :from, as: :string, required: false, label: "From", input_html: {class: "datepicker"} %>
+            <%= f.input :until, as: :string, required: false, label: "Until", input_html: {class: "datepicker"} %>
             <%= f.button :submit, "Explore", class: "btn btn-primary" %>
+            </div>
           </div>
         </div>
       </div>
@@ -33,8 +35,8 @@
 
   <div class="split container-slogan" style="height:400px;">
     <div class="centered">
-      <h1><strong>Not On My Watch.</strong></h1>
-      <p>Finally wear the watch you have always wanted. </p>
+      <h1><strong>Not On Our Watch..</strong></h1>
+      <p>Finally wear the watch you have always wanted! </p>
     </div>
   </div>
 </div>

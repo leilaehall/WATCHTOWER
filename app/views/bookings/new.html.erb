@@ -4,12 +4,14 @@
     <h2>Booking confirmation form: </h2>
     <h3>You selected the <strong><%= @watch.watch_brand %> <%= @watch.watch_model %></strong> watch!</h3>
     <br>
-    <p>Price per day: <%= @watch.rental_price %> €</p>
+    <p>Price per day: <i id="price"><%= @watch.rental_price %></i> €</p>
+    <p id="totalprice"></p>
     <p>Please add the following information to finalize your booking: </p>
     <%= simple_form_for [@booking] do |b| %>
-    <%= b.input :start_date %>
-    <%= b.input :end_date %>
-    <%= b.input :delivery_address %>
+    <div class="form-row">
+    <%= b.input :start_date, as: :string, required: false, label: "Rent from", input_html: {class: "datepicker"}, wrapper_html: {class: "col-md-3"}%>
+    </div>
+    <%= b.input :delivery_address, wrapper_html: {class: "col-md-6"} %>
     <%= b.submit "Finalize my booking", class: "btn btn-primary" %>
     <% end %>
     <br>
