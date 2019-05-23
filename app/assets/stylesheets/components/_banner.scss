@@ -36,11 +36,15 @@
 .split .form-wrapper {
   border-radius: 10px;
   border: 5px solid $blue;
-  width: 500px;
+  width: 300px;
   padding: 2em;
   background-color: rgba(0,0,0,0.4);
+  height:550px;
 }
 
+.field {
+  width:100;
+}
 body {
   background-color: $blue;
 }
