@@ -1,0 +1,41 @@
+.bookings-index-header {
+  color: white;
+  padding-left: 20px;
+}
+.cards-bookings {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+  padding: 20px;
+  padding-left:60px;
+
+}
+.card-bookings {
+  height: 160px;
+  padding-left: 20px ;
+  box-shadow: 2px 2px 3px black;
+  border-radius:2px;
+  margin-bottom: 20px;
+  margin-top: 30px;
+  //padding-right:50px;
+  width:500px;
+
+
+}
+
+.card-bookings h3 {
+  font-size: 17px;
+  padding-right:15px;
+}
+
+.btn-update{
+  margin-left: 10px;
+  padding: 15px;
+  border-radius:5px;
+  font-weight:bold;
+}
+
+.infos-bookings{
+  width:500px;
+
+}

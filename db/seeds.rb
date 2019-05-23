@@ -1,6 +1,7 @@
 puts 'Cleaning database...'
 Watch.destroy_all
 User.destroy_all
+Booking.destroy_all
 
 puts "Creating users...."
 users_attributes = [
@@ -34,7 +35,7 @@ users_attributes = [
     address:    'Pont street, London',
     avatar:     File.open(Rails.root.join("db/fixtures/user_image/margaret-thatcher.png"))
 
-  },
+  }
 ]
 
 users = User.create!(users_attributes)
@@ -222,5 +223,75 @@ watches_attributes = [
     watch_image:         File.open(Rails.root.join("db/fixtures/watches/audemars-piguet-royal-oak.png"))
   }
 ]
+watches = Watch.create!(watches_attributes)
 
-Watch.create!(watches_attributes)
+puts 'Creating bookings...'
+bookings_attributes = [
+  {
+    start_date: '2019-05-27',
+    end_date: '2019-06-30',
+    status: 'pending',
+    delivery_address: '4 Regents Park',
+    watch: watches[0],
+    user: users[0]
+  },
+  {
+    start_date: '2019-05-27',
+    end_date: '2019-06-30',
+    status: 'accepted',
+    delivery_address: '5 Regents Park',
+    watch: watches[2],
+    user: users[1]
+  },
+    {
+    start_date: '2019-05-27',
+    end_date: '2019-06-30',
+    status: 'pending',
+    delivery_address: '5 Regents Park',
+    watch: watches[11],
+    user: users[1]
+  },
+  {
+    start_date: '2019-05-27',
+    end_date: '2019-06-30',
+    status: 'pending',
+    delivery_address: '6 Regents Park',
+    watch: watches[9],
+    user: users[2]
+  },
+  {
+    start_date: '2019-05-27',
+    end_date: '2019-06-30',
+    status: 'pending',
+    delivery_address: '7 Regents Park',
+    watch: watches[8],
+    user: users[3]
+  },
+    {
+    start_date: '2019-05-27',
+    end_date: '2019-06-30',
+    status: 'pending',
+    delivery_address: '4 Regents Park',
+    watch: watches[4],
+    user: users[0]
+  },
+    {
+    start_date: '2019-05-27',
+    end_date: '2019-06-30',
+    status: 'pending',
+    delivery_address: '4 Regents Park',
+    watch: watches[7],
+    user: users[0]
+  },
+    {
+    start_date: '2019-05-27',
+    end_date: '2019-06-30',
+    status: 'pending',
+    delivery_address: '4 Regents Park',
+    watch: watches[13],
+    user: users[0]
+  }
+]
+Booking.create!(bookings_attributes)
+
+
