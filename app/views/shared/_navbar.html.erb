@@ -1,6 +1,6 @@
 <div class="navbar navbar-home navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to root_path, class: "navbar-brand" do %>
-    <h1>WatchTower <i class="fas fa-stopwatch"></i> <i class="fas fa-gopuram"></i></h1>
+  <h1>WatchTower <i class="fas fa-stopwatch"></i> <i class="fas fa-gopuram"></i></h1>
   <% end %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -27,18 +27,23 @@
       <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "navlink"  %>
     </div>
   <% else %>
-    <div class="nav-item active">
-      <%= link_to "Log in", new_user_session_path, class: "navlink"  %>
-    </div>
-    <div class="nav-item active">
-      <%= link_to "Sign up", new_user_registration_path, class: "navlink"  %>
-    </div>
+  <div class="nav-item active">
+    <%= link_to "Log in", new_user_session_path, class: "navlink"  %>
+  </div>
+  <div class="nav-item active">
+    <%= link_to "Sign up", new_user_registration_path, class: "navlink"  %>
+  </div>
   <% end %>
+  <%= form_tag watches_path, method: :get do %>
+  <%= text_field_tag :query,
+  params[:query],
+  class: "form-control",
+    placeholder: "Find a watch"%>
+    <% end %>
+  </div>
 
-  <nav class="navbar">
-    <form class="form-inline">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search Watch" aria-label="Search">
-      <button class="btn btn-primary" type="submit">Search</button>
-    </form>
-  </nav>
-</div>
+
+
+
+
+
