@@ -8,7 +8,9 @@
         <h2><%= link_to watch.watch_brand, watch_path(watch)%></h2>
         <p><%= watch.watch_model %></p>
         <p><%= watch.watch_category %></p>
-        <p><%= watch.rental_price %> € per day</p>
+      </div>
+      <div class="price-tag">
+        <p> <strong><%= watch.rental_price %> € per day</strong></p>
       </div>
     </div>
     <% end %>

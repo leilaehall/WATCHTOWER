@@ -1,20 +1,20 @@
 <div class="main-container product-show-container">
 
-  <% @watches.each do |watch| %>
-  <div class="split split-cards">
-    <div class="card-product">
+  <div class="cards-index cards-mywatch">
+    <% @watches.each do |watch| %>
+    <div class="card-product-index card-mywatch ">
       <img src="<%= watch.watch_image %>">
-      <div class="card-product-infos">
+      <div class="card-product-infos-index infos-mywatch">
         <h2> <%=watch.watch_brand%> - <%=watch.watch_model%> </h2>
         <h3>€<%=watch.rental_price%> (per day)</h3> <p>Retail price €<%=watch.retail_price%></p>
       </div>
-      <%= button_to "DELETE", watch, :method => :delete %>
-     </div>
+      <%= link_to "DELETE", watch, :method => :delete, class: "btn btn-danger btn-delete" %>
     </div>
-  <% end %>
+    <% end %>
+  </div>
 
-  <div class="split split-buttons">
-    <button href="<% link_to new_my_watch_path%>" class="btn-main split-button">ENTER NEW WATCH</button>
+  <div class="create-box">
+    <%= link_to "CREATE NEW", new_my_watch_path, class: "btn btn-primary create-btn" %>
   </div>
 
 </div>

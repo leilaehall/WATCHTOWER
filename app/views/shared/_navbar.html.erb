@@ -21,6 +21,9 @@
   </div>
   <% if user_signed_in? %>
     <div class="nav-item active">
+      <%= link_to "My Watches", my_watches_path, class: "navlink"  %>
+    </div>
+    <div class="nav-item active">
       <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "navlink"  %>
     </div>
   <% else %>
