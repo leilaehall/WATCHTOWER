@@ -3,12 +3,12 @@ class Watch < ApplicationRecord
   belongs_to :user
   has_many :bookings
   mount_uploader :watch_image, PhotoUploader
- geocoded_by :address
- after_validation :geocode, if: :will_save_change_to_address?
 
 
- multisearchable against: [ :watch_brand, :watch_model, :watch_category, :rental_price, :retail_price, :gender, :user_id ]
 
+  multisearchable against: [:watch_brand, :watch_model, :watch_category, :rental_price, :retail_price, :gender, :user_id]
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 private
 
   def search_data
@@ -23,7 +23,7 @@ private
     }
   end
 
- 
+
 end
 
 
