@@ -3,6 +3,14 @@ class WatchesController < ApplicationController
 
   def index
     @watches = Watch.all
+    @watch_map = Watch.where.not(latitude: nil, longitude: nil)
+
+    @markers = @watch_map.map do |watch|
+      {
+        lat: watch.latitude,
+        lng: watch.longitude
+      }
+    end
   end
 
   def show

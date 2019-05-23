@@ -51,7 +51,8 @@ watches_attributes = [
     availability_start: '2019-06-20',
     availability_end:   '2022-08-18',
     user:               users[0],
-    watch_image:        File.open(Rails.root.join("db/fixtures/watches/hublot-big-bang.png"))
+    watch_image:        File.open(Rails.root.join("db/fixtures/watches/hublot-big-bang.png")),
+    address:            '33 Rue de la Poterie, Geneva'
   },
   {
     watch_brand:        'Rolex',
@@ -63,7 +64,8 @@ watches_attributes = [
     availability_start: '2019-02-14',
     availability_end:   '2023-02-22',
     user:               users[1],
-    watch_image:        File.open(Rails.root.join("db/fixtures/watches/rolex-gmt-master.png"))
+    watch_image:        File.open(Rails.root.join("db/fixtures/watches/rolex-gmt-master.png")),
+    address:            '1 Chemin des diablerets, Lausanne'
   },
  {
     watch_brand:        'Patek P',
@@ -75,7 +77,8 @@ watches_attributes = [
     availability_start: '2019-01-18',
     availability_end:   '2023-07-01',
     user:               users[2],
-    watch_image:        File.open(Rails.root.join("db/fixtures/watches/patek-philippe-calatrava.png"))
+    watch_image:        File.open(Rails.root.join("db/fixtures/watches/patek-philippe-calatrava.png")),
+    address:            '16 Hofmattstrasse, Zermatt'
   },
   {
     watch_brand:        'Zenith',
@@ -87,7 +90,8 @@ watches_attributes = [
     availability_start: '2019-05-10',
     availability_end:   '2022-09-15',
     user:               users[3],
-    watch_image:        File.open(Rails.root.join("db/fixtures/watches/zenith-el-primero.png"))
+    watch_image:        File.open(Rails.root.join("db/fixtures/watches/zenith-el-primero.png")),
+    address:            '12 Rittergasse, Basel'
   },
   {
     watch_brand:        'Longines',
@@ -99,7 +103,8 @@ watches_attributes = [
     availability_start: '2019-08-15',
     availability_end:   '2021-01-01',
     user:               users[0],
-    watch_image:        File.open(Rails.root.join("db/fixtures/watches/longines-master-collection.png"))
+    watch_image:        File.open(Rails.root.join("db/fixtures/watches/longines-master-collection.png")),
+    address:            '27 Seestrasse, Zurich'
   },
    {
     watch_brand:        'Cartier',
@@ -111,7 +116,8 @@ watches_attributes = [
     availability_start: '2019-04-18',
     availability_end:   '2022-11-10',
     user:               users[1],
-    watch_image:        File.open(Rails.root.join("db/fixtures/watches/cartier-tank.png"))
+    watch_image:        File.open(Rails.root.join("db/fixtures/watches/cartier-tank.png")),
+    address:            '24 Industriestrasse, Zug'
   },
   {
     watch_brand:         'IWC',
@@ -123,7 +129,8 @@ watches_attributes = [
     availability_start:  '2019-02-12',
     availability_end:    '2027-06-07',
     user:                 users[2],
-    watch_image:         File.open(Rails.root.join("db/fixtures/watches/iwc-portofino.png"))
+    watch_image:         File.open(Rails.root.join("db/fixtures/watches/iwc-portofino.png")),
+    address:             '3 Bahnhofstrasse, Schwyz'
   },
  {
     watch_brand:         'Rolex',
@@ -135,7 +142,8 @@ watches_attributes = [
     availability_start:  '2019-05-02',
     availability_end:    '2023-08-20',
     user:                 users[3],
-    watch_image:         File.open(Rails.root.join("db/fixtures/watches/rolex-daytona.png"))
+    watch_image:         File.open(Rails.root.join("db/fixtures/watches/rolex-daytona.png")),
+    address:             '121 Promenade, Davos'
   },
   {
     watch_brand:         'Zenith',
@@ -147,7 +155,8 @@ watches_attributes = [
     availability_start:  '2019-01-01',
     availability_end:    '2025-05-18',
     user:                 users[0],
-    watch_image:         File.open(Rails.root.join("db/fixtures/watches/zenith-elite.png"))
+    watch_image:         File.open(Rails.root.join("db/fixtures/watches/zenith-elite.png")),
+    address:             '9 Via dal Bagn, St. Moritz'
   },
   {
     watch_brand:         'VC',
@@ -159,7 +168,8 @@ watches_attributes = [
     availability_start:  '2019-12-12',
     availability_end:    '2028-04-20',
     user:                 users[1],
-    watch_image:         File.open(Rails.root.join("db/fixtures/watches/vacheron-constantin-elite.png"))
+    watch_image:         File.open(Rails.root.join("db/fixtures/watches/vacheron-constantin-elite.png")),
+    address:             '9 Via Serafino Balestra, Lugano'
   },
   {
     watch_brand:         'Cartier',
@@ -171,7 +181,8 @@ watches_attributes = [
     availability_start:  '2019-05-12',
     availability_end:    '2020-12-20',
     user:                users[2],
-    watch_image:         File.open(Rails.root.join("db/fixtures/watches/cartier-ballon-bleu.png"))
+    watch_image:         File.open(Rails.root.join("db/fixtures/watches/cartier-ballon-bleu.png")),
+    address:             '8 Hopfenweg, Thun'
   },
   {
     watch_brand:         'Tag Heuer',
@@ -183,7 +194,8 @@ watches_attributes = [
     availability_start:  '2019-08-12',
     availability_end:    '2024-02-20',
     user:                users[3],
-    watch_image:         File.open(Rails.root.join("db/fixtures/watches/tag-heuer-monaco.png"))
+    watch_image:         File.open(Rails.root.join("db/fixtures/watches/tag-heuer-monaco.png")),
+    address:            'Route de Chaumont, Neuchâtel'
   },
  {
     watch_brand:         'Longines',
@@ -195,7 +207,8 @@ watches_attributes = [
     availability_start:  '2019-06-15',
     availability_end:    '2029-08-25',
     user:                 users[0],
-    watch_image:         File.open(Rails.root.join("db/fixtures/watches/longines-dolce-vita.png"))
+    watch_image:         File.open(Rails.root.join("db/fixtures/watches/longines-dolce-vita.png")),
+    address:             '25 Ruhtalstrasse, Winterthur'
   },
   {
     watch_brand:         'Breguet',
@@ -207,7 +220,8 @@ watches_attributes = [
     availability_start:  '2019-03-12',
     availability_end:    '2025-12-02',
     user:                users[1],
-    watch_image:         File.open(Rails.root.join("db/fixtures/watches/breguet-moon.jpg"))
+    watch_image:         File.open(Rails.root.join("db/fixtures/watches/breguet-moon.jpg")),
+    address:             '1 Zeughausgasse, St. Gallen'
   },
   {
     watch_brand:         'Audemars P',
@@ -219,7 +233,8 @@ watches_attributes = [
     availability_start:  '2019-08-14',
     availability_end:    '2026-07-19',
     user:                users[2],
-    watch_image:         File.open(Rails.root.join("db/fixtures/watches/audemars-piguet-royal-oak.png"))
+    watch_image:         File.open(Rails.root.join("db/fixtures/watches/audemars-piguet-royal-oak.png")),
+    address:             'Quai de Nogent, Yverdon-les-Bains'
   }
 ]
 
