@@ -1,0 +1,18 @@
+<div class="card-watch-booking">
+  <div class="card-product-left">
+    <%= cl_image_tag booking.watch.watch_image, width: 200, height: 200, crop: :fill %>
+    <div class="card-product-infos">
+      <span class="booking-status <%= booking.status %>"><%= booking.status %></span>
+
+      <h2><%= booking.watch.watch_brand %> - <%=booking.watch.watch_model %></h2>
+      <p><%= booking.start_date %> 👉 <%= booking.end_date %></p>
+    </div>
+  </div>
+
+  <div class="actions">
+    <% if booking.status == "pending" && booking.watch.user == current_user %>
+      <%= link_to "Accept", accept_booking_path(booking), method: :patch, class: "btn btn-primary"  %>
+      <%= link_to "Decline", decline_booking_path(booking), method: :patch, class: "btn btn-primary"  %>
+    <% end %>
+  </div>
+</div>

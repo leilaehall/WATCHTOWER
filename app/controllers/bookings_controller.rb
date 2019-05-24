@@ -1,10 +1,11 @@
 class BookingsController < ApplicationController
   before_action :set_watch, only: [:new, :create]
   def index
-    @bookings = Booking.all
     @pending_bookings = current_user.bookings.where(status: 'pending')
     @accepted_bookings = current_user.bookings.where(status: 'accepted')
     # outgoing bookings goes through watches
+
+    @incoming_bookings = current_user.incoming_bookings
   end
 
   def new
