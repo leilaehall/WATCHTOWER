@@ -281,30 +281,6 @@ bookings_attributes = [
     delivery_address: '7 Regents Park',
     watch: watches[8],
     user: users[3]
-  },
-    {
-    start_date: '2019-05-27',
-    end_date: '2019-06-30',
-    status: 'pending',
-    delivery_address: '4 Regents Park',
-    watch: watches[4],
-    user: users[0]
-  },
-    {
-    start_date: '2019-05-27',
-    end_date: '2019-06-30',
-    status: 'pending',
-    delivery_address: '4 Regents Park',
-    watch: watches[7],
-    user: users[1]
-  },
-    {
-    start_date: '2019-05-27',
-    end_date: '2019-06-30',
-    status: 'pending',
-    delivery_address: '4 Regents Park',
-    watch: watches[13],
-    user: users[2]
   }
 ]
 
