@@ -38,13 +38,16 @@
   <div class="nav-item active">
     <%= link_to "Sign up", new_user_registration_path, class: "navlink"  %>
   </div>
-  <% end %>
+  <div class="searchbar">
+    <% end %>
   <%= form_tag watches_path, method: :get do %>
   <%= text_field_tag :query,
   params[:query],
   class: "form-control",
     placeholder: "Find a watch"%>
     <% end %>
+  </div>
+
   </div>
 
 
