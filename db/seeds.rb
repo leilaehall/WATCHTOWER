@@ -247,7 +247,7 @@ bookings_attributes = [
     end_date: '2019-06-30',
     status: 'pending',
     delivery_address: '4 Regents Park',
-    watch: watches[0],
+    watch: watches[3],
     user: users[0]
   },
   {
@@ -264,7 +264,7 @@ bookings_attributes = [
     status: 'pending',
     delivery_address: '5 Regents Park',
     watch: watches[11],
-    user: users[1]
+    user: users[2]
   },
   {
     start_date: '2019-05-27',
@@ -272,7 +272,7 @@ bookings_attributes = [
     status: 'pending',
     delivery_address: '6 Regents Park',
     watch: watches[9],
-    user: users[2]
+    user: users[3]
   },
   {
     start_date: '2019-05-27',
@@ -280,7 +280,7 @@ bookings_attributes = [
     status: 'pending',
     delivery_address: '7 Regents Park',
     watch: watches[8],
-    user: users[3]
+    user: users[4]
   },
     {
     start_date: '2019-05-27',
@@ -296,7 +296,7 @@ bookings_attributes = [
     status: 'pending',
     delivery_address: '4 Regents Park',
     watch: watches[7],
-    user: users[0]
+    user: users[1]
   },
     {
     start_date: '2019-05-27',
@@ -304,7 +304,7 @@ bookings_attributes = [
     status: 'pending',
     delivery_address: '4 Regents Park',
     watch: watches[13],
-    user: users[0]
+    user: users[2]
   }
 ]
 Booking.create!(bookings_attributes)
