@@ -2,53 +2,61 @@
   <div class="split-new">
     <div class="form-wrapper watch-form d-flex">
       <%= simple_form_for @watch, url: my_watches_url do |f| %>
-        <div class="centered">
-          <h3> Upload your watch </h3>
-          <div class="form">
+      <div class="centered">
+        <h3> Upload your watch </h3>
+        <div class="form">
+          <div class="form-row">
+            <%= f.input :watch_brand, wrapper_html: {class: "col-md-3"} %>
+            <%= f.input :watch_model, wrapper_html: {class: "col-md-3"} %>
+            <%= f.input :watch_category, as: :select, collection: ["Mechanical", "Quartz", "Slim", "Sports", "Titanium"], wrapper_html: {class: "col-md-3"} %>
+          </div>
+
+          <div>
             <div class="form-row">
-              <%= f.input :watch_brand, wrapper_html: {class: "col-md-3"} %>
-              <%= f.input :watch_model, wrapper_html: {class: "col-md-3"} %>
-              <label for="inputCity">City</label>
-              <div class="form-group">
-              <select> name="search[city]" id="inputCity" class="form-control">
-              <option selected>Select</option>
-              <option>Geneva</option>
-              <option>Lausanne</option>
-              <option>Zermatt</option>
-              <option>Basel</option>
-              <option>Zurich</option>
-              <option>Zug</option>
-              <option>Schwyz</option>
-              <option>Davos</option>
-              <option>St. Moritz</option>
-              <option>Lugano</option>
-              <option>Thun</option>
-              <option>Neuchâtel</option>
-              <option>Winterthur</option>
-              <option>St. Gallen</option>
-              <option>Yverdon-les-Bains</option>
-              </select>
-            </div>
-            </div>
-            <div class="form-row">
-              <%= f.input :watch_category, wrapper_html: {class: "col-md-3"} %>
-              <%= f.input :gender, as: :select, collection: ["Female", "Male", "Coder"], wrapper_html: {class: "col-md-3"} %>
-            </div>
-            <div class="form-row">
-              <%= f.input :rental_price, wrapper_html: {class: "col-md-3"} %>
-              <%= f.input :retail_price, wrapper_html: {class: "col-md-3"} %>
-            </div>
-            <div class="form-row">
-              <%= f.input :availability_start, as: :string, input_html: {class: "datepicker"}, wrapper_html: {class: "col-md-3"} %>
-              <%= f.input :watch_image, wrapper_html: {class: "col-md-6"} , name: "klik"%>
-              <%= f.input :watch_image_cache, as: :hidden %>
+              <%= f.input :address, as: :select, collection: ["Basel", "Davos", "Geneva", "Lausanne", "Lugano", "Neuchâtel", "Schwyz", "St. Gallen", "St. Moritz", "Thun", "Winterthur", "Yverdon-les-Bains", "Zermatt", "Zug", "Zurich"], wrapper_html: {class: "col-md-5"} %>
+                <%= f.input :gender, as: :select, collection: ["Female", "Male", "Coder"], wrapper_html: {class: "col-md-4"} %>
+              </div>
+
+<!--               <label for="inputCity">City</label>
+              PLEASE leave this code, need to check the form options with TA.
+              <br>
+              <select name="search[city]" id="inputCity" class="col-md-3">
+                <option selected></option>
+                <option>Basel</option>
+                <option>Davos</option>
+                <option>Geneva</option>
+                <option>Lausanne</option>
+                <option>Lugano</option>
+                <option>Neuchâtel</option>
+                <option>Schwyz</option>
+                <option>St. Gallen</option>
+                <option>St. Moritz</option>
+                <option>Thun</option>
+                <option>Winterthur</option>
+                <option>Yverdon-les-Bains</option>
+                <option>Zermatt</option>
+                <option>Zug</option>
+                <option>Zurich</option>
+              </select> -->
+
             </div>
           </div>
-          <%= f.button :submit, "Create", class: "btn btn-primary"%>
-          <%= link_to "Cancel ", root_path, class: "navlink"  %>
+          <div class="form-row">
+            <%= f.input :rental_price, wrapper_html: {class: "col-md-4.5"} %>
+            <%= f.input :retail_price, wrapper_html: {class: "col-md-4.5"} %>
+          </div>
+          <div class="form-row">
+            <%= f.input :availability_start, as: :string, input_html: {class: "datepicker"}, wrapper_html: {class: "col-md-9"} %>
+          </div>
+          <div>
+            <%= f.input :watch_image, wrapper_html: {class: "col-md-9"} , name: "klik"%>
+            <%= f.input :watch_image_cache, as: :hidden %>
+          </div>
         </div>
+        <%= f.button :submit, "Create", class: "btn btn-primary"%>
+        <%= link_to "Cancel ", root_path, class: "navlink"  %>
+      </div>
       <% end %>
     </div>
   </div>
 </div>
-
