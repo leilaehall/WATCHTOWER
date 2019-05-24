@@ -2,8 +2,8 @@ class BookingsController < ApplicationController
   before_action :set_watch, only: [:new, :create]
   def index
     @bookings = Booking.all
-    @pending_bookings = current_user.outgoing_bookings.where(status: 'pending')
-    @accepted_bookings = current_user.outgoing_bookings.where(status: 'accepted')
+    @pending_bookings = current_user.bookings.where(status: 'pending')
+    @accepted_bookings = current_user.bookings.where(status: 'accepted')
     # outgoing bookings goes through watches
   end
 
@@ -13,6 +13,11 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
+    start_date = Date.strptime(params[:booking][:start_date].split(" ")[0], '%m/%d/%Y')
+    end_date = Date.strptime(params[:booking][:start_date].split(" ")[2], '%m/%d/%Y')
+    @booking.start_date = start_date
+    @booking.end_date = end_date
+
     @booking.watch = @watch
     @booking.status = 'pending'
     @booking.user = current_user
@@ -44,7 +49,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :delivery_adress)
+    params.require(:booking).permit(:delivery_address)
   end
 
   def set_watch

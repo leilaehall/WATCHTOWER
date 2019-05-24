@@ -7,7 +7,7 @@
     <p>Price per day: <i id="price"><%= @watch.rental_price %></i> €</p>
     <p id="totalprice"></p>
     <p>Please add the following information to finalize your booking: </p>
-    <%= simple_form_for [@booking] do |b| %>
+    <%= simple_form_for [@watch, @booking] do |b| %>
     <div class="form-row">
     <%= b.input :start_date, as: :string, required: false, label: "Rent from", input_html: {class: "datepicker"}, wrapper_html: {class: "col-md-3"}%>
     </div>

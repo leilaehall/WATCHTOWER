@@ -28,7 +28,6 @@ class WatchesController < ApplicationController
     end
   end
 
-
   def show
     @watch = Watch.find(params[:id])
   end
