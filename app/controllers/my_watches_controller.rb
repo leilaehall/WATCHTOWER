@@ -5,7 +5,6 @@ class MyWatchesController < ApplicationController
 
   def index
     @watches = Watch.where(user: current_user)
-
   end
 
   def create
@@ -14,8 +13,8 @@ class MyWatchesController < ApplicationController
 
     if @watch.save
       flash[:notice] = "Your watch has been successfully created"
+      redirect_to my_watches_path
       # redirect_to my_watches_path
-      redirect_to my_watches_path(@watch)
     else
       render :new
     end
