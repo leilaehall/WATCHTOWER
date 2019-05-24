@@ -2,48 +2,21 @@
 
 <div class="banner banner-homepage" style="background-image: url(https://images.pexels.com/photos/129843/pexels-photo-129843.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);">
   <div class="split">
-    <div class="form-wrapper">
+    <div class="form-wrapper watch-form d-flex">
       <%= simple_form_for :search, url: watches_path, method: :get do |f| %>
       <div class="centered">
         <h3> Look for your new watch! </h3>
         <div>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="inputCity">City</label>
-              <div>
-              <select name="search[city]" id="inputCity" class="form-control">
-              <option selected>Select</option>
-              <option>Basel</option>
-              <option>Davos</option>
-              <option>Geneva</option>
-              <option>Lausanne</option>
-              <option>Lugano</option>
-              <option>Neuchâtel</option>
-              <option>Schwyz</option>
-              <option>St. Gallen</option>
-              <option>St. Moritz</option>
-              <option>Thun</option>
-              <option>Winterthur</option>
-              <option>Yverdon-les-Bains</option>
-              <option>Zermatt</option>
-              <option>Zug</option>
-              <option>Zurich</option>
-              </select>
-            </div>
-            </div>
-            <div class="form-group">
-              <label for="inputGender">Gender</label>
-              <select name="search[gender]" id="inputGender" class="form-control">
-                <option selected>Select</option>
-                <option>Female</option>
-                <option>Male</option>
-                <option>Other</option>
-              </select>
-            </div>
-            <div class="alignment">
-            <%= f.input :from, as: :string, required: false, label: "From", input_html: {class: "datepicker"} %>
-            <%= f.button :submit, "Explore", class: "btn btn-primary" %>
-            </div>
+          <div class="form-group">
+            <%= f.input :address, as: :select, collection: ["Basel", "Davos", "Geneva", "Lausanne", "Lugano", "Neuchâtel", "Schwyz", "St. Gallen", "St. Moritz", "Thun", "Winterthur", "Yverdon-les-Bains", "Zermatt", "Zug", "Zurich"] %>
+          </div>
+          <div class="form-group">
+            <%= f.input :gender, as: :select, collection: ["Female", "Male", "Other"]%>
+          </div>
+          <div class="alignment">
+            <%= f.input :from, as: :string, required: false, label: "Availablility period", input_html: {class: "datepicker"} %>
+            <p id="totaldays"></p>
+            <%= f.button :submit, "Search watches", class: "btn btn-primary" %>
           </div>
         </div>
       </div>
