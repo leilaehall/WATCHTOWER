@@ -19,11 +19,11 @@
             </div>
           </div>
           <div class="form-row">
-            <%= f.input :rental_price, wrapper_html: {class: "col-md-4.5"} %>
-            <%= f.input :retail_price, wrapper_html: {class: "col-md-4.5"} %>
+            <%= f.input :rental_price, wrapper_html: {class: "col-md-5"} %>
+            <%= f.input :retail_price, wrapper_html: {class: "col-md-4"} %>
           </div>
           <div class="form-row">
-            <%= f.input :availability_start, as: :string, input_html: {class: "datepicker"}, wrapper_html: {class: "col-md-9"} %>
+            <%= f.input :availability_start, label: "Availability", as: :string, input_html: {class: "datepicker"}, wrapper_html: {class: "col-md-9"} %>
           </div>
           <div>
             <%= f.input :watch_image, wrapper_html: {class: "col-md-9"} , name: "klik"%>

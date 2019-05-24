@@ -8,12 +8,12 @@
         <h3> Look for your new watch! </h3>
         <div>
           <div class="form-group">
-            <%= f.input :address, as: :select, collection: ["Basel", "Davos", "Geneva", "Lausanne", "Lugano", "Neuchâtel", "Schwyz", "St. Gallen", "St. Moritz", "Thun", "Winterthur", "Yverdon-les-Bains", "Zermatt", "Zug", "Zurich"] %>
+            <%= f.input :address, :label => "City:", required: false, as: :select, collection: ["Basel", "Davos", "Geneva", "Lausanne", "Lugano", "Neuchâtel", "Schwyz", "St. Gallen", "St. Moritz", "Thun", "Winterthur", "Yverdon-les-Bains", "Zermatt", "Zug", "Zurich"] %>
           </div>
           <div class="form-group">
-            <%= f.input :gender, as: :select, collection: ["Female", "Male", "Other"]%>
+            <%= f.input :gender, :label => "Gender style:", required: false, as: :select, collection: ["Female", "Male", "Other"]%>
           </div>
-          <div class="alignment">
+          <div class="form-group">
             <%= f.input :from, as: :string, required: false, label: "Availablility period", input_html: {class: "datepicker"} %>
             <p id="totaldays"></p>
             <%= f.button :submit, "Search watches", class: "btn btn-primary" %>
