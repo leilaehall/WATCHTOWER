@@ -280,7 +280,7 @@ bookings_attributes = [
     status: 'pending',
     delivery_address: '7 Regents Park',
     watch: watches[8],
-    user: users[4]
+    user: users[3]
   },
     {
     start_date: '2019-05-27',
@@ -307,6 +307,7 @@ bookings_attributes = [
     user: users[2]
   }
 ]
+
 Booking.create!(bookings_attributes)
 
 
