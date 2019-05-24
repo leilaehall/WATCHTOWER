@@ -7,19 +7,24 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item ">
-        <%= link_to "Home", root_path, class: "navlink"  %>
-      </li>
-      <li class="nav-time ">
-        <%= link_to "Browse Watches", watches_path, class: "navlink" %>
-      </li>
-      <li class="nav-time ">
-        <%= link_to "Rent your Watch", new_my_watch_path, class: "navlink" %>
-      </li>
-    </ul>
+
+  <div class="nav-item active">
+      <%= link_to "Home |", root_path, class: "navlink"  %>
+    </div>
+
+  <div class="nav-item active">
+      <%= link_to "Browse Watches |", watches_path, class: "navlink" %>
+    </div>
+
+  <div class="nav-item active">
+     <%= link_to "Rent your Watch |", new_my_watch_path, class: "navlink" %>
+    </div>
+
   </div>
   <% if user_signed_in? %>
+  <div class="nav-item active">
+      <%= link_to "My Bookings", bookings_path, class: "navlink"  %>
+    </div>
     <div class="nav-item active">
       <%= link_to "My Watches", my_watches_path, class: "navlink"  %>
     </div>
@@ -33,7 +38,8 @@
   <div class="nav-item active">
     <%= link_to "Sign up", new_user_registration_path, class: "navlink"  %>
   </div>
-  <% end %>
+  <div class="searchbar">
+    <% end %>
   <%= form_tag watches_path, method: :get do %>
   <%= text_field_tag :query,
   params[:query],
@@ -41,6 +47,9 @@
     placeholder: "Find a watch"%>
     <% end %>
   </div>
+
+  </div>
+
 
 
 
