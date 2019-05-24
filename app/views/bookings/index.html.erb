@@ -10,9 +10,11 @@
         <h3><%= booking.user.username %></h3>
         <p>From: <%= booking.start_date %> until: <%= booking.end_date %></p>
         <h2>Booking status: <%= booking.status %></h2>
+        <%= link_to "CONFIRM", accept_booking_path(booking), :method => :patch, class: "btn btn-main btn-update" %>
+     <%= link_to "DECLINE", decline_booking_path(booking), :method => :patch, class: "btn btn-main btn-update" %>
         <% end %>
       </div>
-    </div>
+   </div>
 </div>
     <h2 class="bookings-index-header">My bookings:</h2>
     <div class="cards-index cards-bookings">
