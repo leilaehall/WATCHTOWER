@@ -1,0 +1,10 @@
+function showPriceComparison(price_range) {
+  console.log('success')
+  var price_div = document.getElementById('chrono-prices')
+  price_div.hidden = false
+  price_div.innerHTML = price_range
+}
+<%#= @scraper.results %>
+<% unless @scraper.results.empty? %>
+  showPriceComparison('<%= j render "watches/pricerange",url: @scraper.url % [@scraper.pages], range: @scraper.price_range, mean: @scraper.mean %>')
+<% end %>

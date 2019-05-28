@@ -6,6 +6,8 @@
       <p>Model <strong><%=@watch.watch_category%></strong></p>
       <p>Gender <strong><%=@watch.gender%></strong></p>
       <h3>€<%=@watch.rental_price%> (per day)</h3> <p>Retail price €<%=@watch.retail_price%></p>
+      <%= button_to('compare', compare_watch_path(@watch), remote: true) %>
+      <div id="chrono-prices" hidden></div>
       <%= link_to(new_watch_booking_path(@watch)) do %>
       <button class="btn btn-primary btn-book" type="submit">
         <strong>BOOK NOW</strong> </button>
