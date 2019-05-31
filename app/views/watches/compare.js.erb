@@ -6,5 +6,5 @@ function showPriceComparison(price_range) {
 }
 <%#= @scraper.results %>
 <% unless @scraper.results.empty? %>
-  showPriceComparison('<%= j render "watches/pricerange",url: @scraper.url % [@scraper.pages], range: @scraper.price_range, mean: @scraper.mean %>')
+  showPriceComparison('<%= j render "watches/pricerange", scraper: @scraper %>')
 <% end %>

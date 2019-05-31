@@ -1,4 +1,5 @@
-<div>checked: <%= url %></div>
+<div>checked: <%= scraper.url % [scraper.pages] %></div>
 <div>prices:</div>
-<div>from <%= range.first %> to <%= range.last %></div>
-<div>mean: <%= mean %></div>
+<div>from <%= scraper.price_range.first %> to <%= scraper.price_range.last %></div>
+<div>mean: <%= scraper.mean %></div>
+<div>median: <%= scraper.median %></div>

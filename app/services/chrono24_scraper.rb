@@ -1,5 +1,5 @@
 class Chrono24Scraper
-  attr_reader :results, :price_range, :mean, :url, :pages
+  attr_reader :results, :price_range, :mean, :url, :pages, :median
 
   def initialize(watch, watch_brand: nil, year: nil, min_price: nil, max_price: nil )
     @brand = watch_brand || watch.watch_brand || 'search'
@@ -18,7 +18,7 @@ class Chrono24Scraper
       @pages = element.text.gsub(/\D/, '').to_f./(120).ceil
     end
 
-    @pages.times do |page|
+    [@pages, 5].min.times do |page|
       html_file = open(@url % [page+1]).read
       html_doc = Nokogiri::HTML(html_file)
       html_doc.search('.article-price strong').each do |element|
@@ -29,5 +29,7 @@ class Chrono24Scraper
 
     @price_range = @results.minmax
     @mean = @results.inject { |sum, next_result| sum + next_result } / @results.size
+    @median = @results[@results.size/2]
   end
 end
+
