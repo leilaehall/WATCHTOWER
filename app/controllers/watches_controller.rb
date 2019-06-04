@@ -1,5 +1,5 @@
 class WatchesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:index, :show, :compare]
 
   def index
 
@@ -38,5 +38,15 @@ class WatchesController < ApplicationController
 
     # no need for app/views/restaurants/destroy.html.erb
     redirect_to my_watches_path
+  end
+
+  def compare
+    @watch = Watch.find(params[:id])
+    @scraper = Chrono24Scraper.new(@watch)
+    @scraper.scrape
+    p @scraper.url
+    respond_to do |format|
+      format.js
+    end
   end
 end

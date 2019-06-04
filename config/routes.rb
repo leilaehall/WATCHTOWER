@@ -5,6 +5,9 @@ Rails.application.routes.draw do
 
 # AS RENTER
   resources :watches, only: [:index, :show, :destroy] do
+    member do
+      post :compare, defaults: { format: :js }
+    end
     resources :bookings, only: [:new, :create]
   end
 
